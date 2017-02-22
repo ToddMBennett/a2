@@ -1,14 +1,15 @@
-.container {
+.container-fluid {
   text-align: center;
   border: 3px gray dotted;
-  padding-bottom: 50px;
-  max-width: 500px;
+  padding: 20px 0 50px 0;
+  max-width: 400px;
 }
 
-h1 {
-  margin-bottom: 50px;
+.formInput {
+  margin: 50px 0 0 20px;
+  text-align: left;
 }
 
-h3, h4 {
+#submit {
   margin-top: 50px;
 }
