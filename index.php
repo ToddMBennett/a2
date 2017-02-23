@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>A2 - Bill Splitter</title>
 
+    <link rel="stylesheet" href="main.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -19,8 +20,9 @@
     <![endif]-->
   </head>
   <body>
-    <div class="container-fluid">
+    <div class='container-fluid'>
       <h1>Bill Splitter</h1>
+      <hr />
       <form>
         <!-- <h3>Would you like to split or randomize someone to foot the bill?</h3>
         <input type="radio" id="split" name="splitOrFoot" /> Split the bill<br>
@@ -28,46 +30,45 @@
       </form> -->
 
       <div id='billSplitter'>
-        <form method='GET' action='index.php'>
+        <form method='GET' action='/'>
 
           <!-- text input for number of paying customers -->
-          <div class="formInput">
-            <label for='howMany'>Split how many ways? </label>
-            <input type='text' name='howMany' value='<?php if(isset($_GET['howMany'])) echo sanitize($_GET['howMany'])?>' required>
+          <div class='formInput'>
+            <label for='num'>Split how many ways? </label>
+            <input type='text' name='num' size='16' value='<?php if($num) echo sanitize($_GET['num'])?>' placeholder='Paying customers' required>
           </div>
 
           <!-- text input for total bill -->
-          <div class="formInput">
-            <label for='howMuch'>How much was the tab? $</label>
-            <input type='text' name='howMuch' value='<?php if(isset($_GET['howMuch'])) echo sanitize($_GET['howMuch'])?>' required>
+          <div class='formInput'>
+            <label for='amount'>How much is the tab? $</label>
+            <input type='text' name='amount' size='21' value='<?php if($amount) echo sanitize($_GET['amount'])?>' placeholder='Round to nearest dollar' required>
           </div>
 
           <!-- dropdown asking user for level of service -->
-          <div class="formInput">
+          <div class='formInput'>
           <label for='service'>How was the service? </label>
         		<select name='service' id='service'>
-              <option value='choose'>Choose one...</option>
-              <option value='great' <?php if($service === 'great') echo 'SELECTED'?>>Great</option>
-              <option value='good' <?php if($service === 'good') echo 'SELECTED'?>>Good</option>
-              <option value='OK' <?php if($service === 'OK') echo 'SELECTED'?>>OK</option>
-              <option value='not good' <?php if($service === 'not good') echo 'SELECTED'?>>Not good</option>
-              <option value='horrible' <?php if($service === 'horrible') echo 'SELECTED'?>>Horrible</option>
+              <option value='choose'>Tipping...</option>
+              <option value=.25 <?php if($service === .25) echo 'SELECTED'?>>Great - 25%</option>
+              <option value=.20 <?php if($service === .20) echo 'SELECTED'?>>Good - 20%</option>
+              <option value=.15 <?php if($service === .15) echo 'SELECTED'?>>OK - 15%</option>
+              <option value=.10 <?php if($service === .10) echo 'SELECTED'?>>Not good - 10%</option>
+              <option value=.05 <?php if($service === .05) echo 'SELECTED'?>>Horrible - 5%</option>
             </select><br />
           </div>
 
           <!-- alert box if user doesn't select service -->
           <?php if($_GET): ?>
-            <div class="alert <?=$alertType?>" role="alert">
+            <div class='alert <?=$alertType?>' role='alert'>
               <?=$results?>
             </div>
           <?php endif; ?>
 
           <!-- radio button for rounding up or not -->
-          <div class="formInput">
+          <div class='formInput'>
           <label>Would you like to round up? </label>
-          <input type='radio' name='roundUp' value='yes' <?php if($roundUp === 'yes') echo 'CHECKED'?>> Yes
-          <input type='radio' name='roundUp' value='no' <?php if($roundUp === 'no') echo 'CHECKED'?>> No<br />
-          </div>
+          <input type='checkbox' name='roundUp' value='yes' <?php if($roundUp == 'yes') echo 'CHECKED'?>> Yes
+        </div><br><br>
 
           <!-- checking for errors in text fields, ONLY numeric inputs -->
           <?php if(isset($errors)): ?>
@@ -80,8 +81,9 @@
             </div>
           <?php endif; ?>
 
-          <input type='submit' class='btn btn-primary btn-lg' id="submit">
+          <input type='submit' class='btn btn-primary btn-md' value='Calculate' id='sbmt'><br><br><br>
 
+          <button id="btn" type='button' class='alert alert-success'>Each person should pay $<?=$calculate?></button>
         </form>
     </div>
   </body>

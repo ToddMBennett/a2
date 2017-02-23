@@ -1,11 +1,5 @@
-$(document).ready(function() {
-   $('input[type="radio"]').click(function() {
-       if($(this).attr('id') == 'split') {
-            $('#splitBill').show() && $('#footBill').hide();
-       }
-
-       else {
-            $('#footBill').show() && $('#splitBill').hide();
-       }
-   });
-});
+// $(document).ready(function() {
+//   $('#sbmt').submit(function () {
+//     $('button').show();
+//   });
+// });
