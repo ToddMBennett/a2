@@ -35,13 +35,13 @@
           <!-- Text input for number of paying customers -->
           <div class='formInput'>
             <label for='input'>Split how many ways? </label>
-            <input type='text' name='num' id='input' size='16' placeholder='Paying customers' required="required" value='<?php if($num) echo sanitize($_GET['num'])?>'>
+            <input type='text' name='num' size='16' placeholder='Paying customers' required="required" value='<?php if($num) echo sanitize($_GET['num'])?>'>
           </div>
 
           <!-- Text input for total bill -->
           <div class='formInput'>
             <label for='input'>How much is the tab? $</label>
-            <input type='text' name='amount' id='input' size='21' placeholder='Round to nearest dollar' required="required" value='<?php if($amount) echo sanitize($_GET['amount'])?>'>
+            <input type='text' name='amount' size='21' placeholder='Round to nearest dollar' required="required" value='<?php if($amount) echo sanitize($_GET['amount'])?>'>
           </div>
 
           <!-- Dropdown asking user for level of service -->
@@ -49,11 +49,11 @@
           <label for='service'>How was the service? </label>
         		<select name='service' id='service'>
               <option value='tipping'>Tipping...</option>
-              <option value=.25 <?php if($service === .25) echo 'SELECTED'?>>Great - 25%</option>
-              <option value=.20 <?php if($service === .20) echo 'SELECTED'?>>Good - 20%</option>
-              <option value=.15 <?php if($service === .15) echo 'SELECTED'?>>OK - 15%</option>
-              <option value=.10 <?php if($service === .10) echo 'SELECTED'?>>Not good - 10%</option>
-              <option value=.05 <?php if($service === .05) echo 'SELECTED'?>>Horrible - 5%</option>
+              <option value=.25 <?php if($service === .25) echo 'SELECTED' ?>>Great - 25%</option>
+              <option value=.20 <?php if($service === .20) echo 'SELECTED' ?>>Good - 20%</option>
+              <option value=.15 <?php if($service === .15) echo 'SELECTED' ?>>OK - 15%</option>
+              <option value=.10 <?php if($service === .10) echo 'SELECTED' ?>>Not good - 10%</option>
+              <option value=.05 <?php if($service === .05) echo 'SELECTED' ?>>Horrible - 5%</option>
             </select><br />
           </div>
 
@@ -91,6 +91,7 @@
             <button id="btn" type='button' class='alert alert-success'><?=$calculate?></button>
 
         </form>
+      </div>
     </div>
   </body>
 </html>
