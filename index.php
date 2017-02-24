@@ -33,15 +33,15 @@
         <form method='GET' action='/'>
 
           <!-- Text input for number of paying customers -->
-          <div class='formInput'>
+          <div class='split'>
             <label for='input'>Split how many ways? </label>
-            <input type='text' name='num' size='16' placeholder='Paying customers' required="required" value='<?php if($num) echo sanitize($_GET['num'])?>'>
+            <input type='text' name='num' id='split' size='16' placeholder='Paying customers' required="required" value='<?php if($num) echo sanitize($_GET['num'])?>'>
           </div>
 
           <!-- Text input for total bill -->
-          <div class='formInput'>
+          <div class='tab'>
             <label for='input'>How much is the tab? $</label>
-            <input type='text' name='amount' size='21' placeholder='Round to nearest dollar' required="required" value='<?php if($amount) echo sanitize($_GET['amount'])?>'>
+            <input type='text' name='amount' id='tab' size='21' placeholder='Round to nearest dollar' required="required" value='<?php if($amount) echo sanitize($_GET['amount'])?>'>
           </div>
 
           <!-- Dropdown asking user for level of service -->
