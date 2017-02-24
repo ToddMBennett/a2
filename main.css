@@ -1,19 +1,33 @@
 .container-fluid {
   text-align: center;
   border: 3px gray dotted;
-  padding: 20px 0 50px 0;
-  max-width: 400px;
+  padding: 15px 30px;
+  max-width: 550px;
 }
 
 .formInput {
-  margin: 40px 0 0 20px;
+  margin: 30px 0 0 20px;
   text-align: left;
 }
-#sbmt {
-  margin-top: 20px;
 
+
+label {
+  font-size: 17px;
 }
-/*button {
-  max-width: 100%;
-  display: none;
-}*/
+
+input:required {
+  box-shadow: 4px 4px 15px rgba(169, 68, 66, 1);
+}
+
+input:required:focus {
+  border: 2px solid #a94442;
+  outline: none;
+}
+
+.alertErr {
+  color: #a94442;
+}
+
+#sbmt {
+  margin-top: 5px;
+}
