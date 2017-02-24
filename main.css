@@ -6,7 +6,7 @@
 }
 
 .formInput {
-  margin: 30px 0 0 20px;
+  margin: 40px 0 0 20px;
   text-align: left;
 }
 
@@ -29,5 +29,5 @@ input:required:focus {
 }
 
 #sbmt {
-  margin-top: 5px;
+  margin: 20px 0 20px 0;
 }

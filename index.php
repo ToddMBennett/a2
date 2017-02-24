@@ -68,7 +68,7 @@
           <div class='formInput'>
             <label>Would you like to round up? </label>
             <input type='checkbox' name='roundUp' value='yes' <?php if($roundUp == 'yes') echo 'CHECKED'?>> Yes
-          </div><br><br>
+          </div>
 
           <!-- checking for errors in text fields -->
           <?php if(isset($errors)): ?>
@@ -84,13 +84,11 @@
           <hr />
           <!-- Calculate button -->
           <label for='sbmt'></label>
-            <input type='submit' class='btn btn-primary btn-lg' value='Calculate' id='sbmt'><br><br><br>
-          </label>
+            <input type='submit' class='btn btn-primary btn-lg' value='Calculate' id='sbmt'><br>
 
           <!-- Alert button - showing amount of what each customer owes -->
-          <label for="btn">
-            <button id="btn" type='button' class='alert alert-success'>Each person should pay $<?=$calculate?></button>
-          </label>
+          <label for="btn"></label>
+            <button id="btn" type='button' class='alert alert-success'><?=$calculate?></button>
 
         </form>
     </div>

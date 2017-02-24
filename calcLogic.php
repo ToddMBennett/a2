@@ -37,8 +37,8 @@ else {
 // Caculation for splitting bill, with rounding and without rounding
 if(is_numeric($amount) && is_numeric($num)) {
   if($roundUp == 'yes') {
-    $calculate = ceil($amount / $num) * (1 + $service);
+    $calculate = 'Each person should pay $'.ceil($amount / $num) * (1 + $service);
   } else {
-    $calculate = floor($amount / $num) * (1 +$service);
+    $calculate = 'Each person should pay $'.floor($amount / $num) * (1 +$service);
   }
 }
