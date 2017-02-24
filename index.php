@@ -1,4 +1,4 @@
-<?php require('calc.php'); ?>
+<?php require('calcLogic.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
